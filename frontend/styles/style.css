@@ -1,0 +1,152 @@
+:root {
+  --brown: rgb(38,37,35);
+  --beige: rgb(158,147,134);
+  --darkgreen: rgb(75,103,84);
+  --green: rgb(121,146,120);
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+}
+
+#input-container,
+#display-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  background-color: var(--darkgreen);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-name {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.input-name {
+  background-color: var(--beige);
+  columns: white;
+  height: 50px;
+  width: 250px;
+}
+
+.input-name i {
+  padding: 5px;
+}
+
+input {
+  background-color: var(--beige);
+  border: none;
+}
+
+.dropdown {
+  height: 50px;
+  min-width: 15px;
+  position: relative;
+  margin: 2px;
+}
+
+.dropdown * {
+  box-sizing: border-box;
+}
+
+.select-gender,
+.select-race,
+.select-class {
+  height: 50px;
+  background: var(--beige);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border: 2px --green solid;
+  border-radius: 5px;
+  padding: 5px;
+  transition: background 0.3s;
+}
+
+.select-clicked {
+  border: 2px --green solid;
+  box-shadow: 0 0 0.8em --brown;
+}
+
+.select:hover {
+  background: var(--brown);
+}
+
+.caret {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid white;
+}
+
+.caret-rotate {
+  transition: rotate (180deg);
+}
+
+.menu {
+  list-style: none;
+  padding: 1px 1px;
+  background: var(--green);
+  border: 1px --green solid;
+  box-shadow: 0 0.5em 1em rgbd(0, 0, 0, 0.2);
+  border-radius: 5px;
+  color: white;
+  position: absolute;
+  top: 3px;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%);
+  opacity: 0;
+  display: none;
+  transition: 0.2s;
+  z-index: 1;
+}
+
+.menu li {
+  padding: 1px 1px;
+  margin: 1px 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.menu li:hover {
+  background: var(--brown);
+}
+
+.active {
+  background: var(--green);
+}
+
+.menu-open {
+  display: block;
+  opacity: 1;
+}
+
+
+
+.display-name,
+.display-gender,
+.display-race,
+.display-class {
+  height: 35px;
+}
+
