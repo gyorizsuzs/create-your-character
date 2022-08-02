@@ -65,9 +65,7 @@ input {
   box-sizing: border-box;
 }
 
-.select-gender,
-.select-race,
-.select-class {
+.select {
   height: 50px;
   background: var(--beige);
   color: #fff;
