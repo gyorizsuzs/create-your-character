@@ -28,18 +28,15 @@
       </div>
       <ul class="menu">
         <li class="active">Choose a Race</li>
-        <li>Ainur</li>
         <li>Black Númenóreans</li>
         <li>Dwarves</li>
         <li>Elves</li>
         <li>Hobbits</li>
-        <li>Maiar</li>
         <li>Men</li>
         <li>Nazgûl</li>
         <li>Olog-Hai</li>
         <li>Undead</li>
         <li>Uruks</li>
-        <li>Valar</li>
       </ul>
     </div>
     <div class="dropdown">
@@ -82,11 +79,11 @@
 const dropdowns = document.querySelectorAll('.dropdown');
 
 dropdowns.forEach(dropdown => {
-    const select = document.querySelector('.select-gender, .select-race, .select-class');
-    const caret = document.querySelector('.caret');
-    const menu = document.querySelector('.menu');
-    const options = document.querySelectorAll('.menu li');
-    const selected = document.querySelector('.selected');
+    const select = dropdown.querySelector('.select');
+    const caret = dropdown.querySelector('.caret');
+    const menu = dropdown.querySelector('.menu');
+    const options = dropdown.querySelectorAll('.menu li');
+    const selected = dropdown.querySelector('.selected');
 
     select.addEventListener('click', () => {
         select.classList.toggle('select-clicked');
@@ -101,7 +98,7 @@ dropdowns.forEach(dropdown => {
             caret.classList.remove('caret-rotate');
             menu.classList.remove('menu-open');
             options.forEach(option => {
-                option.classList.add('active');
+                option.classList.remove('active');
             });
         });
     });
