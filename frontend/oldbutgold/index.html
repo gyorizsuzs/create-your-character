@@ -10,7 +10,7 @@
       src="https://kit.fontawesome.com/7e5b9202dc.js"
       crossorigin="anonymous"
     ></script>
-    <script src="scripts/script.js" defer></script>
+    <script src="./script.js" defer></script>
     <title>Choose your Character</title>
   </head>
   <body>
@@ -24,24 +24,24 @@
           </div>
           <div class="dropdown">
             <div class="select">
-              <span class="selected">Choose a Gender</span>
-              <div class="caret"></div>
+              <span class="selected">
+                <input type="text" class="selected" placeholder="Choose a Gender" readonly/>
+              </span>
             </div>
             <ul class="menu">
-              <li class="active">Choose a Gender</li>
-              <li>Female</li>
+              <li class="active">Female</li>
               <li>Male</li>
               <li>Other</li>
             </ul>
           </div>
           <div class="dropdown">
             <div class="select">
-              <span class="selected">Choose a Race</span>
-              <div class="caret"></div>
+              <span class="selected">
+                <input type="text" class="select" placeholder="Choose a Race" readonly/>
+              </span>
             </div>
             <ul class="menu">
-              <li class="active">Choose a Race</li>
-              <li>Black Númenóreans</li>
+              <li class="active">Black Númenóreans</li>
               <li>Dwarves</li>
               <li>Elves</li>
               <li>Hobbits</li>
@@ -54,12 +54,12 @@
           </div>
           <div class="dropdown">
             <div class="select">
-              <span class="selected">Choose a Class</span>
-              <div class="caret"></div>
+              <span class="selected">
+                <input type="text" class="select" placeholder="Choose a Class" readonly/>
+              </span>
             </div>
             <ul class="menu">
-              <li class="active">Choose a Class</li>
-              <li>Beastmaster</li>
+              <li class="active">Beastmaster</li>
               <li>Executioner</li>
               <li>Ranger</li>
               <li>Slaver</li>
@@ -69,14 +69,13 @@
         </form>
       </section>
 	  <section id="display-container">
-
-		  <h3>Character Name</h3>
+		  <h3></h3>
 		  <div class="display-name"></div>
-		  <h3>Character Gender</h3>
+		  <h3></h3>
 		  <div class="display-gender"></div>
-		  <h3>Character Race</h3>
+		  <h3></h3>
 		  <div class="display-race"></div>
-		  <h3>Character Class</h3>
+		  <h3></h3>
 		  <div class="display-class"></div>
 	  </section>
     </div>

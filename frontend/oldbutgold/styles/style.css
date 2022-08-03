@@ -38,7 +38,6 @@ form {
 
 .input-name {
   margin-right: 2px;
-  width: 20%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -62,17 +61,33 @@ form {
   flex: 1;
   height: 80%;
   outline: none;
-  text-rendering: ;
 }
 
-input {
-  background-color: var(--beige);
+.selected {
+  background: none;
   border: none;
+  color: white;
+  background-color: var(--beige);
+  flex: 1;
+  height: 80%;
+  outline: none;
+  display: flex;
+  align-items: center;
+}
+
+.selected input{
+  background: none;
+  border: none;
+  color: white;
+  background-color: var(--beige);
+  flex: 1;
+  height: 80%;
+  outline: none;
 }
 
 .dropdown {
   height: 50px;
-  width: 25%;
+  width: 200px;
   position: relative;
   margin: 2px;
   cursor: pointer;
@@ -80,6 +95,27 @@ input {
 
 .dropdown * {
   box-sizing: border-box;
+}
+
+.dropdown::before {
+  content: '';
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  z-index: 20;
+  width: 8px;
+  height: 8px;
+  border: 2px solid var(--beige);
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+  transform: rotate(-45deg);
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.dropdown.active::before {
+  top: 22px;
+  transform: rotate(-225deg);
 }
 
 .select {
@@ -90,22 +126,26 @@ input {
   justify-content: space-between;
   align-items: center;
 
-  border: 2px --green solid;
+  border: 2px var(--green) solid;
   border-radius: 5px;
   padding: 5px;
   transition: background 0.3s;
 }
 
 .select-clicked {
-  border: 2px --green solid;
-  box-shadow: 0 0 0.8em --brown;
+  border: 2px var(--green) solid;
+  box-shadow: 0 0 0.8em var(--brown);
 }
 
 .select:hover {
   background: var(--brown);
 }
 
-.caret {
+.selected:hover {
+  background: var(--brown);
+}
+
+/* .caret {
   width: 0;
   height: 0;
   border-left: 5px solid transparent;
@@ -116,18 +156,18 @@ input {
 
 .caret-rotate {
   transition: rotate (180deg);
-}
+} */
 
 .menu {
   list-style: none;
   padding: 1px 1px;
-  background: var(--green);
-  border: 1px --green solid;
+  background: var(--brown);
+  border: 1px var(--beige) solid;
   box-shadow: 0 0.5em 1em rgbd(0, 0, 0, 0.2);
   border-radius: 5px;
   color: white;
   position: absolute;
-  top: 3px;
+  top: 50px;
   left: 50%;
   width: 100%;
   transform: translate(-50%);
@@ -159,10 +199,22 @@ input {
 
 
 
+.display-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .display-name,
 .display-gender,
 .display-race,
 .display-class {
   height: 35px;
+  width: 250px;
+  border: 1px solid var(--brown);
+  border-radius: 5px;
 }
 
+h3 {
+  height: 10px;
+}
