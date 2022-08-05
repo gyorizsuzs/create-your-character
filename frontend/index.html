@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/reset.css"></link>
+    <link rel="stylesheet" href="./styles/style.css"></link>
+    <script
+      src="https://kit.fontawesome.com/7e5b9202dc.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./script.js" defer></script>
+    <title>Choose your Character</title>
+  </head>
+  <body>
+    <div id="root">
+      <div id="wrapper">
+        <header>
+          <h1>Create your Character</h1>
+        </header>
+        <section id="input-container">
+          <form>
+            <div class="input-name">
+              <i class="fa-solid fa-user-pen"></i>
+              <input type="text" placeholder="Enter Name" required />
+              <i class="fa-solid fa-arrow-right-long"></i>
+            </div>
+            <div class="dropdown">
+                  <input type="text" id="select-gender" class="select" placeholder="Choose a Gender" readonly/>
+              <select id="genders" class="menu">
+                <option>Female</option>
+                <option>Male</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="dropdown">
+                  <input type="text" id="select-race" class="select" placeholder="Choose a Race" readonly/>
+              <select class="menu">
+                <option>Black Númenóreans</option>
+                <option>Dwarves</option>
+                <option>Elves</option>
+                <option>Hobbits</option>
+                <option>Men</option>
+                <option>Nazgûl</option>
+                <option>Olog-Hai</option>
+                <option>Undead</option>
+                <option>Uruks</option>
+              </select>
+            </div>
+            <div class="dropdown">
+                  <input type="text" id="select-class" class="select" placeholder="Choose a Class" readonly/>
+              <select class="menu">
+                <option>Beastmaster</option>
+                <option>Executioner</option>
+                <option>Ranger</option>
+                <option>Slaver</option>
+                <option>Sawbone</option>
+              </select>
+            </div>
+          </form>
+        </section>
+        <h1  class="display-name"></h1>
+      <section id="display-container">
+        <div class="display-gender"></div>
+        <div class="display-race"></div>
+        <div class="display-class"></div>
+      </section>
+      </div>
+    </div>
+  </body>
+</html>
