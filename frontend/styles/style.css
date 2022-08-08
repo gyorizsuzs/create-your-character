@@ -148,6 +148,10 @@ form {
   background: var(--brown);
 }
 
+input#select-gender {
+  pointer-events: none;
+}
+
 .menu {
   height: 100%;
   width: 100%;
@@ -162,8 +166,8 @@ form {
   top: 0%;
   left: 50%;
   transform: translate(-50%);
-  opacity: 0;
-  display: none;
+/*   opacity: 0;
+  display: none; */
   transition: 0.1s;
   z-index: 1;
 }

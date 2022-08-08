@@ -8,19 +8,19 @@ inputName.addEventListener("input", (event) => {
 });
 
 const femaleDisplayComponent = function () {
-  return /*html*/ `
+  return `
     <i class="fa-solid fa-venus"></i>
     `;
 };
 
 const maleDisplayComponent = function () {
-  return /*html*/ `
+  return `
     <i class="fa-solid fa-mars"></i>
     `;
 };
 
 const otherDisplayComponent = function () {
-  return /*html*/ `
+  return `
     <i class="fa-solid fa-blender"></i>
     `;
 };
@@ -31,13 +31,13 @@ const genderOptions = [
   otherDisplayComponent,
 ];
 
-const selectGender = document.querySelector("#select-gender");
+const selectGender = document.querySelector("#genders");
 const displayGender = document.querySelector(".display-gender");
-selectGender.addEventListener("click", (event) => {
+selectGender.addEventListener("input", (event) => {
   let selectGenderData = event.target.value;
-  for (let i = 0; i < genderOptions.length; i++) {
-    displayGender.insertAdjacentHTML("beforeend", genderOptions[i]);
-  }
+  console.log(selectGenderData);
+
+    displayGender.innerHTML = genderOptions[selectGenderData]();
 });
 
 const blackComponent = function () {
