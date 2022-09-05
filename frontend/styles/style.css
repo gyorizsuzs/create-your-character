@@ -1,9 +1,9 @@
 :root {
-  --brown: rgb(38,37,35);
-  --beige: rgb(158,147,134);
-  --darkgreen: rgb(75,103,84);
-  --green: rgb(121,146,120);
-  --yellow: rgba(197,206,84,0.57)
+  --brown: rgb(38, 37, 35);
+  --beige: rgb(158, 147, 134);
+  --darkgreen: rgb(75, 103, 84);
+  --green: rgb(121, 146, 120);
+  --yellow: rgba(197, 206, 84, 0.57);
 }
 
 body {
@@ -18,7 +18,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: 'Cinzel Decorative', cursive;
+  font-family: "Cinzel Decorative", cursive;
 }
 
 #wrapper {
@@ -32,7 +32,7 @@ header {
   padding-top: 5%;
   background: var(--darkgreen);
   color: #fff;
-  font-family: ;
+  font-family: "Cinzel Decorative", cursive;
   font-size: xx-large;
   text-shadow: 7px 2px 3px var(--yellow);
   display: flex;
@@ -91,19 +91,21 @@ form {
 
 .dropdown {
   height: 100%;
-  width: 25%;
+  width: 10rem;
   position: relative;
   cursor: pointer;
   border-radius: 5px;
   border: 2px var(--green) solid;
+  outline: none;
 }
 
 .dropdown * {
   box-sizing: border-box;
+  outline: none;
 }
 
 .dropdown::before {
-  content: '';
+  content: "";
   position: absolute;
   right: 5%;
   top: 40%;
@@ -116,11 +118,13 @@ form {
   transform: rotate(-45deg);
   transition: 0.1s;
   pointer-events: none;
+  outline: none;
 }
 
 .dropdown.active::before {
   top: 50%;
   transform: rotate(-225deg);
+  outline: none;
 }
 
 .select {
@@ -166,7 +170,7 @@ input#select-gender {
   top: 0%;
   left: 50%;
   transform: translate(-50%);
-/*   opacity: 0;
+  /*   opacity: 0;
   display: none; */
   transition: 0.1s;
   z-index: 1;
@@ -200,18 +204,18 @@ input#select-gender {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 2%
+  gap: 2%;
 }
 
 .display-name {
-height: 5%;
-width: 100%;
-background-color: var(--darkgreen);
-font-size: x-large;
-text-shadow: 7px 2px 3px var(--yellow);
-color: white;
-display: flex;
-justify-content: center;
+  height: 5%;
+  width: 100%;
+  background-color: var(--darkgreen);
+  font-size: x-large;
+  text-shadow: 7px 2px 3px var(--yellow);
+  color: white;
+  display: flex;
+  justify-content: center;
 }
 
 .display-gender,
@@ -221,17 +225,21 @@ justify-content: center;
   width: 100%;
   border: none;
   border-radius: 5px;
+  display: flex;
+  justify-content: center;
 }
 
-
-.display-gender {
-
+.display-gender i,
+.display-gender i::before {
+  min-height: 5rem;
+  min-width: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .display-race {
-
 }
 
 .display-class {
-
 }

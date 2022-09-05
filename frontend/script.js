@@ -37,52 +37,52 @@ selectGender.addEventListener("input", (event) => {
   let selectGenderData = event.target.value;
   console.log(selectGenderData);
 
-    displayGender.innerHTML = genderOptions[selectGenderData]();
+  displayGender.innerHTML = genderOptions[selectGenderData]();
 });
 
 const blackComponent = function () {
   return /*html*/ `
-  <img src="./images/blnumenoreans.webp>"
+  <img src="./images/blnumenoreans.webp">
   `;
 };
 const dwarvesComponent = function () {
   return /*html*/ `
-  <img src="./images/Dwarves.webp>"
+  <img src="./images/Dwarves.webp">
   `;
 };
 const elvesComponent = function () {
   return /*html*/ `
-  <img src="./images/elves.webp>"
+  <img src="./images/elves.webp">
   `;
 };
 const hobbitsComponent = function () {
   return /*html*/ `
-  <img src="./images/Hobbits.webp>"
+  <img src="./images/Hobbits.webp">
   `;
 };
 const nazgulComponent = function () {
   return /*html*/ `
-  <img src="./images/nazgul.webp>"
+  <img src="./images/nazgul.webp">
   `;
 };
 const ologhaiComponent = function () {
   return /*html*/ `
-  <img src="./images/ologhai.webp>"
+  <img src="./images/ologhai.webp">
   `;
 };
 const menComponent = function () {
   return /*html*/ `
-  <img src="./images/Talion.webp>"
+  <img src="/images/talion.png">
   `;
 };
 const undeadComponent = function () {
   return /*html*/ `
-  <img src="./images/Undead.webp>"
+  <img src="./images/Undead.webp">
   `;
 };
 const urukComponent = function () {
   return /*html*/ `
-  <img src="./images/Uruk.webp>"
+  <img src="./images/Uruk.webp">
   `;
 };
 
@@ -98,13 +98,13 @@ const raceOptions = [
   ologhaiComponent,
 ];
 
-const selectRace = document.querySelector("#select-race");
+const selectRace = document.querySelector("#races");
 const displayRace = document.querySelector(".display-race");
-selectRace.addEventListener("click", (event) => {
+selectRace.addEventListener("input", (event) => {
   let selectRaceData = event.target.value;
-  displayRace.innerHTML = selectRaceData;
+  displayRace.innerHTML = raceOptions[selectRaceData]();
 
-  displayRace.insertAdjacentHTML("beforeend", raceOptions[i]);
+  /* displayRace.insertAdjacentHTML("beforeend", raceOptions[i]); */
 });
 
 const beastComponent = function () {
@@ -141,12 +141,13 @@ const classOptions = [
   sawboneComponent,
 ];
 
-const selectClass = document.querySelector("#select-class");
+const selectClass = document.querySelector("#classes");
 const displayClass = document.querySelector(".display-class");
-selectClass.addEventListener("click", (event) => {
+selectClass.addEventListener("input", (event) => {
   let selectClassData = event.target.value;
-  displayClass.innerHTML = selectClassData;
-  displayClass.insertAdjacentHTML("beforeend", classOptions[i]);
+  /* displayClass.innerHTML = selectClassData;
+  displayClass.insertAdjacentHTML("beforeend", classOptions[i]);*/
+  displayClass.innerHTML = classOptions[selectClassData]();
 });
 
 /* DROPDOWN MENUS */
