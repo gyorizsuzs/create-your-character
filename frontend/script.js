@@ -1,215 +1,158 @@
 /* COMPONENTS */
 
-const inputName = document.querySelector(".input-name");
-const displayName = document.querySelector(".display-name");
-inputName.addEventListener("input", (event) => {
-  let inputNameData = event.target.value;
-  displayName.innerHTML = inputNameData;
-});
-
-const femaleDisplayComponent = function () {
+let formComponent = function () {
   return `
-    <i class="fa-solid fa-venus"></i>
-    `;
+    <form>
+      <input id="nameInput" type="text" placeholder="Enter your name..."/>
+    </form>
+  `;
 };
 
-const maleDisplayComponent = function () {
+let displayComponent = function () {
   return `
-    <i class="fa-solid fa-mars"></i>
-    `;
+      <p id="name-display">name here</p>
+  `;
 };
 
-const otherDisplayComponent = function () {
+let genderDisplayComponent = function () {
   return `
-    <i class="fa-solid fa-blender"></i>
-    `;
-};
-
-const genderOptions = [
-  femaleDisplayComponent,
-  maleDisplayComponent,
-  otherDisplayComponent,
-];
-
-const selectGender = document.querySelector("#genders");
-const displayGender = document.querySelector(".display-gender");
-selectGender.addEventListener("input", (event) => {
-  let selectGenderData = event.target.value;
-  console.log(selectGenderData);
-
-  displayGender.innerHTML = genderOptions[selectGenderData]();
-});
-
-const blackComponent = function () {
-  return /*html*/ `
-  <img src="./images/blnumenoreans.webp">
+    <p id="gender-display">gender here</p>
   `;
 };
-const dwarvesComponent = function () {
-  return /*html*/ `
-  <img src="./images/Dwarves.webp">
+let raceDisplayComponent = function () {
+  return `
+  <p id="race-display">race here</p>
   `;
 };
-const elvesComponent = function () {
-  return /*html*/ `
-  <img src="./images/elves.webp">
-  `;
-};
-const hobbitsComponent = function () {
-  return /*html*/ `
-  <img src="./images/Hobbits.webp">
-  `;
-};
-const nazgulComponent = function () {
-  return /*html*/ `
-  <img src="./images/nazgul.webp">
-  `;
-};
-const ologhaiComponent = function () {
-  return /*html*/ `
-  <img src="./images/ologhai.webp">
-  `;
-};
-const menComponent = function () {
-  return /*html*/ `
-  <img src="/images/talion.png">
-  `;
-};
-const undeadComponent = function () {
-  return /*html*/ `
-  <img src="./images/Undead.webp">
-  `;
-};
-const urukComponent = function () {
-  return /*html*/ `
-  <img src="./images/Uruk.webp">
+let classDisplayComponent = function () {
+  return `
+  <p id="class-display">class here</p>
   `;
 };
 
-const raceOptions = [
-  blackComponent,
-  dwarvesComponent,
-  elvesComponent,
-  hobbitsComponent,
-  nazgulComponent,
-  menComponent,
-  urukComponent,
-  undeadComponent,
-  ologhaiComponent,
-];
-
-const selectRace = document.querySelector("#races");
-const displayRace = document.querySelector(".display-race");
-selectRace.addEventListener("input", (event) => {
-  let selectRaceData = event.target.value;
-  displayRace.innerHTML = raceOptions[selectRaceData]();
-
-  /* displayRace.insertAdjacentHTML("beforeend", raceOptions[i]); */
-});
-
-const beastComponent = function () {
-  return /*html*/ `
-  <i class="fa-solid fa-paw-claws"></i>
-  `;
-};
-const executionerComponent = function () {
-  return /*html*/ `
-  <i class="fa-solid fa-skull"></i>
-  `;
-};
-const rangerComponent = function () {
-  return /*html*/ `
-  <i class="fa-solid fa-user-cowboy"></i>
-  `;
-};
-const slaverComponent = function () {
-  return /*html*/ `
-  <i class="fa-solid fa-handcuffs"></i>
-  `;
-};
-const sawboneComponent = function () {
-  return /*html*/ `
-  <i class="fa-solid fa-bone-break"></i>
+let allDisplaysComponent = function () {
+  return `
+    <div id="final">
+      <h1>Your Character<h1>
+      <p id="final-gender">gender</p>
+      <p id="final-race">race</p>
+      <p id="final-class">class</p>
+    </div>
   `;
 };
 
-const classOptions = [
-  beastComponent,
-  executionerComponent,
-  raceOptions,
-  slaverComponent,
-  sawboneComponent,
-];
-
-const selectClass = document.querySelector("#classes");
-const displayClass = document.querySelector(".display-class");
-selectClass.addEventListener("input", (event) => {
-  let selectClassData = event.target.value;
-  /* displayClass.innerHTML = selectClassData;
-  displayClass.insertAdjacentHTML("beforeend", classOptions[i]);*/
-  displayClass.innerHTML = classOptions[selectClassData]();
-});
+let contentComponent = function (first, second) {
+  return `
+    <section class="first">${first}</section>
+    <section class="second">${second}</section>
+  `;
+};
 
 /* DROPDOWN MENUS */
 
-const dropdowns = document.querySelectorAll(".dropdown");
+let dropdownGender = function () {
+  return `
+    <label for="gender-select"></label>
+    <select name="gender" id="gender-select">
+      <option value="choose">Choose Gender</option>
+      <option value="Female">Female</option>
+      <option value="Male">Male</option>
+      <option value="Other">Other</option>
+  `;
+};
 
-dropdowns.forEach((dropdown) => {
-  const select = dropdown.querySelector(".select");
-  const menu = dropdown.querySelector(".menu");
-  const options = dropdown.querySelectorAll("option");
-  /*     const selected = dropdown.querySelector('.selected'); */
+let dropdownRace = function () {
+  return `
+  <label for="race-select"></label>
+  <select name="race" id="race-select">
+    <option value="choose">Choose Race</option>
+    <option value="blnumenoreans">Black Numenoreans</option>
+    <option value="dwarves">Dwarves</option>
+    <option value="elves">Elves</option>
+    <option value="nazgul">Nazgul</option>
+    <option value="ologhai">Ologhai</option>
+    <option value="men">Men</option>
+    <option value="undead">Undead</option>
+    <option value="uruks">Uruks</option>
+  `;
+};
 
-  select.addEventListener("click", () => {
-    select.classList.toggle("select-clicked");
-    menu.classList.toggle("menu-open");
-  });
+let dropdownClass = function () {
+  return `
+  <label for="class-select"></label>
+  <select name="class" id="class-select">
+    <option value="choose">Choose Class</option>
+    <option value="beastmaster">Beastmaster</option>
+    <option value="executioner">Executioner</option>
+    <option value="ranger">Ranegr</option>
+    <option value="slaver">SLaver</option>
+    <option value="sawbone">Sawbone</option>
+  `;
+};
 
-  options.forEach((option) => {
-    option.addEventListener("click", () => {
-      select.innerText = option.innerText;
-      select.classList.remove("select-clicked");
-      menu.classList.remove("menu-open");
-      options.forEach((option) => {
-        option.classList.remove("active");
-      });
-    });
-  });
-});
+/* DISPLAY */
 
-/* LOAD EVENT */
-/* 
+function displayGender() {
+  let imageGender = document.getElementById("gender-select").value;
+  document.getElementById("gender-display").innerHTML = imageGender;
+  document.getElementById("final-gender").innerHTML = imageGender;
+}
+
+function displayRace() {
+  let imageRace = document.getElementById("race-select").value;
+  document.getElementById("race-display").innerHTML = imageRace;
+  document.getElementById("final-race").innerHTML = imageRace;
+}
+
+function displayClass() {
+  let imageClass = document.getElementById("class-select").value;
+  document.getElementById("calss-display").innerHTML = imageClass;
+  document.getElementById("final-class").innerHTML = imageClass;
+}
+
+/* let inputElement = null;
+const displayElement = null; */
+
 function loadEvent() {
-    console.log('loadEvent execution');
-    const root =document.querySelector('root');
+  console.log("site loaded");
+  let root = document.querySelector("#root");
 
-    root.insertAdjacentHTML('beforeend', inputComponent());
-    root.insertAdjacentHTML('beforeend', displayComponent());
+  const first = formComponent();
+  const second = displayComponent();
 
-    const inputName = document.querySelector('.input-name');
-    const displayName = document.querySelector('.display-name');
-    inputName.addEventListener('input', (event) => {
-        let inputNameData = event.target.value;
-        displayName.innerHTML = inputNameData;
-    });
+  root.insertAdjacentHTML(
+    "afterbegin",
+    contentComponent(first, second) +
+      dropdownGender() +
+      dropdownRace() +
+      dropdownClass() +
+      displayGender() +
+      displayRace() +
+      displayClass() +
+      allDisplaysComponent()
+  );
 
-    const selectGender = document.querySelector('#select-gender');
-    const displayGender = document.querySelector('.display-gender');
-    selectGender.addEventListener('click', (event) => {
-        displayGender.insertAdjacentHTML('beforeend', femaleDisplayComponent(), maleDisplayComponent(), otherDisplayComponent());
-    });
+  document.querySelector("form").addEventListener("submit", function (event) {
+    event.preventDefault();
+  });
 
-    const selectRace = document.querySelector('#select-race');
-    const displayRace = document.querySelector('.display-race');
-    selectRace.addEventListener('click', (event) => {
-        let selectRaceData = event.target.value;
-        displayRace.innerHTML = selectRaceData;
-    });
+  const inputElement = document.querySelector("#nameInput");
+  const displayElement = document.querySelector("#name-display");
 
-    const selectClass = document.querySelector('#select-class');
-    const displayClass = document.querySelector('.display-class');
-    selectClass.addEventListener('click', (event) => {
-        let selectClass = event.target.value;
-        displayClass.innerHTML = selectClassData;
-    });
-}; */
+  const genderPicker = document.querySelector("#gender-select");
+  genderPicker.addEventListener("change", displayGender);
+
+  const racePicker = document.querySelector("#race-select");
+  racePicker.addEventListener("change", displayRace);
+
+  const classPicker = document.querySelector("#class-select");
+  classPicker.addEventListener("change", displayClass);
+
+  inputElement.addEventListener("input", function (event) {
+    let inputData = event.target.value;
+    displayElement.innerHTML = inputData;
+  });
+  console.log(inputElement);
+}
+
+window.addEventListener("load", loadEvent);

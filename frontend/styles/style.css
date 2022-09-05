@@ -15,231 +15,48 @@ body {
 }
 
 #root {
+  height: 100%;
+  width: 100%;
+  background-color: var(--beige);
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: "Cinzel Decorative", cursive;
 }
 
-#wrapper {
-  height: 95vh;
-  width: 95vw;
+#gender-select option[value="female"] {
+  background-image: url(/frontend/images/female.png);
 }
 
-header {
-  height: 10%;
-  width: 100%;
-  padding-top: 5%;
-  background: var(--darkgreen);
-  color: #fff;
-  font-family: "Cinzel Decorative", cursive;
-  font-size: xx-large;
-  text-shadow: 7px 2px 3px var(--yellow);
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: flex-end;
+#gender-select option[value="male"] {
+  background-image: url(/frontend/images/male.png);
 }
 
-#input-container {
-  height: 40%;
-  width: 100%;
-  display: flex;
-  background-color: var(--darkgreen);
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+#gender-select option[value="Other"] {
+  background-image: url(/frontend/images/blender.png);
 }
 
-form {
-  height: 15%;
-  margin: 2%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 2%;
+#race-select option[value="blnumenoreans"] {
+  background-image: url(/frontend/images/blnumenoreans.webp);
 }
-
-.input-name {
-  height: 100%;
-  width: 25%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-radius: 5px;
-  border: 2px var(--green) solid;
-  background-color: var(--beige);
-  color: white;
-  cursor: pointer;
+#race-select option[value="dwarves"] {
+  background-image: url(/frontend/images/dwarves.jpg);
 }
-
-.input-name i {
-  padding: 2%;
+#race-select option[value="elves"] {
+  background-image: url(/frontend/images/elves.jpeg);
 }
-
-.input-name input,
-.select input {
-  height: 100%;
-  width: 80%;
-  background: none;
-  border: none;
-  color: white;
-  font-size: large;
-  flex: 1;
-  outline: none;
+#race-select option[value="nazgul"] {
+  background-image: url(/frontend/images/nazgul.jpeg);
 }
-
-.dropdown {
-  height: 100%;
-  width: 10rem;
-  position: relative;
-  cursor: pointer;
-  border-radius: 5px;
-  border: 2px var(--green) solid;
-  outline: none;
+#race-select option[value="ologhai"] {
+  background-image: url(/frontend/images/ologhai.jpeg);
 }
-
-.dropdown * {
-  box-sizing: border-box;
-  outline: none;
+#race-select option[value="men"] {
+  background-image: url(/frontend/images/talion.png);
 }
-
-.dropdown::before {
-  content: "";
-  position: absolute;
-  right: 5%;
-  top: 40%;
-  z-index: 1;
-  width: 8px;
-  height: 8px;
-  border: transparent;
-  border-top: 2px solid #fff;
-  border-right: 2px solid #fff;
-  transform: rotate(-45deg);
-  transition: 0.1s;
-  pointer-events: none;
-  outline: none;
+#race-select option[value="undead"] {
+  background-image: url(/frontend/images/undead.png);
 }
-
-.dropdown.active::before {
-  top: 50%;
-  transform: rotate(-225deg);
-  outline: none;
-}
-
-.select {
-  height: 100%;
-  width: 100%;
-  background: none;
-  border: none;
-  color: white;
-  font-size: large;
-  background-color: var(--beige);
-  flex: 1;
-  outline: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  transition: 0.1s;
-}
-
-.select-clicked {
-  border: 2px var(--green) solid;
-  box-shadow: 0 0 0.8em var(--brown);
-}
-
-.select:hover {
-  background: var(--brown);
-}
-
-input#select-gender {
-  pointer-events: none;
-}
-
-.menu {
-  height: 100%;
-  width: 100%;
-  list-style: none;
-  padding: 1px 1px;
-  background: var(--brown);
-  border: 1px var(--beige) solid;
-  box-shadow: 0 0.5em 1em rgbd(0, 0, 0, 0.2);
-  border-radius: 5px;
-  color: white;
-  position: absolute;
-  top: 0%;
-  left: 50%;
-  transform: translate(-50%);
-  /*   opacity: 0;
-  display: none; */
-  transition: 0.1s;
-  z-index: 1;
-}
-
-.menu option {
-  padding: 1px 1px;
-  margin: 1px 0;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.menu option:hover {
-  background: var(--brown);
-}
-
-.menu-open {
-  display: block;
-  opacity: 1;
-}
-
-.active {
-  background: var(--green);
-}
-
-#display-container {
-  height: 40%;
-  width: 100%;
-  display: flex;
-  background-color: var(--darkgreen);
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 2%;
-}
-
-.display-name {
-  height: 5%;
-  width: 100%;
-  background-color: var(--darkgreen);
-  font-size: x-large;
-  text-shadow: 7px 2px 3px var(--yellow);
-  color: white;
-  display: flex;
-  justify-content: center;
-}
-
-.display-gender,
-.display-race,
-.display-class {
-  height: 100%;
-  width: 100%;
-  border: none;
-  border-radius: 5px;
-  display: flex;
-  justify-content: center;
-}
-
-.display-gender i,
-.display-gender i::before {
-  min-height: 5rem;
-  min-width: 5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.display-race {
-}
-
-.display-class {
+#race-select option[value="uruks"] {
+  background-image: url(/frontend/images/Uruk.jpeg);
 }
