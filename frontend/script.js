@@ -9,7 +9,7 @@ inputName.addEventListener("input", (event) => {
 
 const femaleDisplayComponent = function () {
   return `
-    <i class="fa-solid fa-venus"></i>
+    <image src="/frontend/images/female.png">
     `;
 };
 
