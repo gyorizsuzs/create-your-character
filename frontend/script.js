@@ -9,19 +9,19 @@ inputName.addEventListener("input", (event) => {
 
 const femaleDisplayComponent = function () {
   return `
-    <image src="/frontend/images/female.png">
+    <img src="./images/female.png">
     `;
 };
 
 const maleDisplayComponent = function () {
   return `
-    <i class="fa-solid fa-mars"></i>
+  <img src="./images/male.png">
     `;
 };
 
 const otherDisplayComponent = function () {
   return `
-    <i class="fa-solid fa-blender"></i>
+    <img src="./images/blender.png">
     `;
 };
 
@@ -35,54 +35,54 @@ const selectGender = document.querySelector("#genders");
 const displayGender = document.querySelector(".display-gender");
 selectGender.addEventListener("input", (event) => {
   let selectGenderData = event.target.value;
-  console.log(selectGenderData);
+  /* console.log(selectGenderData); */
 
   displayGender.innerHTML = genderOptions[selectGenderData]();
 });
 
 const blackComponent = function () {
   return /*html*/ `
-  <img src="./images/blnumenoreans.webp">
+  <img src="./images/blnum.jpeg">
   `;
 };
 const dwarvesComponent = function () {
   return /*html*/ `
-  <img src="./images/Dwarves.webp">
+  <img src="./images/dwarf.jpeg">
   `;
 };
 const elvesComponent = function () {
   return /*html*/ `
-  <img src="./images/elves.webp">
+  <img src="./images/elves.jpeg">
   `;
 };
 const hobbitsComponent = function () {
   return /*html*/ `
-  <img src="./images/Hobbits.webp">
-  `;
-};
-const nazgulComponent = function () {
-  return /*html*/ `
-  <img src="./images/nazgul.webp">
-  `;
-};
-const ologhaiComponent = function () {
-  return /*html*/ `
-  <img src="./images/ologhai.webp">
+  <img src="./images/hobbits.png">
   `;
 };
 const menComponent = function () {
   return /*html*/ `
-  <img src="/images/talion.png">
+  <img src="./images/nazgul.jpeg">
+  `;
+};
+const nazgulComponent = function () {
+  return /*html*/ `
+  <img src="./images/men.png">
+  `;
+};
+const ologhaiComponent = function () {
+  return /*html*/ `
+  <img src="./images/ologhai.jpeg">
   `;
 };
 const undeadComponent = function () {
   return /*html*/ `
-  <img src="./images/Undead.webp">
+  <img src="./images/undead.png">
   `;
 };
 const urukComponent = function () {
   return /*html*/ `
-  <img src="./images/Uruk.webp">
+  <img src="./images/Uruk.jpeg">
   `;
 };
 
@@ -103,40 +103,38 @@ const displayRace = document.querySelector(".display-race");
 selectRace.addEventListener("input", (event) => {
   let selectRaceData = event.target.value;
   displayRace.innerHTML = raceOptions[selectRaceData]();
-
-  /* displayRace.insertAdjacentHTML("beforeend", raceOptions[i]); */
 });
 
 const beastComponent = function () {
   return /*html*/ `
-  <i class="fa-solid fa-paw-claws"></i>
+  <img src="./images/beastmaster.png">
   `;
 };
 const executionerComponent = function () {
   return /*html*/ `
-  <i class="fa-solid fa-skull"></i>
+  <img src="./images/executioner.png">
   `;
 };
 const rangerComponent = function () {
   return /*html*/ `
-  <i class="fa-solid fa-user-cowboy"></i>
+  <img src="./images/ranger.png">
   `;
 };
 const slaverComponent = function () {
   return /*html*/ `
-  <i class="fa-solid fa-handcuffs"></i>
+  <img src="./images/slaver.png">
   `;
 };
 const sawboneComponent = function () {
   return /*html*/ `
-  <i class="fa-solid fa-bone-break"></i>
+  <img src="./images/sawbone.png">
   `;
 };
 
 const classOptions = [
   beastComponent,
   executionerComponent,
-  raceOptions,
+  rangerComponent,
   slaverComponent,
   sawboneComponent,
 ];
@@ -145,8 +143,6 @@ const selectClass = document.querySelector("#classes");
 const displayClass = document.querySelector(".display-class");
 selectClass.addEventListener("input", (event) => {
   let selectClassData = event.target.value;
-  /* displayClass.innerHTML = selectClassData;
-  displayClass.insertAdjacentHTML("beforeend", classOptions[i]);*/
   displayClass.innerHTML = classOptions[selectClassData]();
 });
 
@@ -155,7 +151,7 @@ selectClass.addEventListener("input", (event) => {
 const dropdowns = document.querySelectorAll(".dropdown");
 
 dropdowns.forEach((dropdown) => {
-  const select = dropdown.querySelector(".select");
+  const select = dropdown.querySelector("select");
   const menu = dropdown.querySelector(".menu");
   const options = dropdown.querySelectorAll("option");
   /*     const selected = dropdown.querySelector('.selected'); */
