@@ -22,18 +22,18 @@ body {
 }
 
 #wrapper {
-  height: 95vh;
-  width: 95vw;
+  height: 90vh;
+  width: 90vw;
 }
 
 header {
-  height: 10%;
+  height: 5%;
   width: 100%;
   padding-top: 5%;
   background: var(--darkgreen);
   color: #fff;
   font-family: "Cinzel Decorative", cursive;
-  font-size: xx-large;
+  font-size: 3rem;
   text-shadow: 7px 2px 3px var(--yellow);
   display: flex;
   flex-wrap: nowrap;
@@ -97,6 +97,7 @@ form {
   border-radius: 5px;
   border: 2px var(--green) solid;
   outline: none;
+  cursor: pointer;
 }
 
 .dropdown * {
@@ -125,6 +126,7 @@ form {
   top: 50%;
   transform: rotate(-225deg);
   outline: none;
+  cursor: pointer;
 }
 
 .select {
@@ -141,19 +143,23 @@ form {
   display: flex;
   align-items: center;
   transition: 0.1s;
+  cursor: pointer;
 }
 
 .select-clicked {
   border: 2px var(--green) solid;
   box-shadow: 0 0 0.8em var(--brown);
+  cursor: pointer;
 }
 
 .select:hover {
   background: var(--brown);
+  cursor: pointer;
 }
 
 input#select-gender {
   pointer-events: none;
+  cursor: pointer;
 }
 
 .menu {
@@ -174,6 +180,7 @@ input#select-gender {
   display: none; */
   transition: 0.1s;
   z-index: 1;
+  cursor: pointer;
 }
 
 .menu option {
@@ -185,15 +192,18 @@ input#select-gender {
 
 .menu option:hover {
   background: var(--brown);
+  cursor: pointer;
 }
 
 .menu-open {
   display: block;
   opacity: 1;
+  cursor: pointer;
 }
 
 .active {
   background: var(--green);
+  cursor: pointer;
 }
 
 #display-container {
@@ -210,7 +220,7 @@ input#select-gender {
   height: 5%;
   width: 100%;
   background-color: var(--darkgreen);
-  font-size: x-large;
+  font-size: 2rem;
   text-shadow: 7px 2px 3px var(--yellow);
   color: white;
   display: flex;
@@ -226,19 +236,25 @@ input#select-gender {
   border-radius: 5px;
   display: flex;
   justify-content: center;
+  gap: 2%;
 }
 
-.display-gender i,
+/* .display-gender i,
 .display-gender i::before {
   min-height: 5rem;
   min-width: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
+} */
+
+footer {
+  height: 4vh;
+  width: 80%;
+  margin-left: 5rem;
+  padding-top: 1rem;
 }
 
-.display-race {
-}
-
-.display-class {
+u {
+  cursor: pointer;
 }
